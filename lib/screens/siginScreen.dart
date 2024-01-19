@@ -78,15 +78,15 @@ class _SignInState extends State<SignIn> {
             
             
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(6.0),
                         child: ClipOval(
             
                           child: Container(
-                              height: 48,
-                              width: 48,
+                              height: 40,
+                              width: 40,
                               decoration: BoxDecoration(
                                   border: Border.all(color: Colors.black
-                                      ,width: 2),
+                                      ,width: 1.5),
                                   borderRadius: BorderRadius.circular(50)
                               ),
             
@@ -104,15 +104,15 @@ class _SignInState extends State<SignIn> {
                       ),
             
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(6.0),
                         child: ClipOval(
             
                           child: Container(
-                              height: 50,
-                              width: 50,
+                              height: 40,
+                              width: 40,
                               decoration: BoxDecoration(
                                   border: Border.all(color: Colors.black
-                                      ,width: 2),
+                                      ,width: 1.5),
                                   borderRadius: BorderRadius.circular(50)
                               ),
             
@@ -130,15 +130,15 @@ class _SignInState extends State<SignIn> {
                       ),
             
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(6.0),
                         child: ClipOval(
             
                           child: Container(
-                              height: 50,
-                              width: 50,
+                              height: 40,
+                              width: 40,
                               decoration: BoxDecoration(
                                   border: Border.all(color: Colors.black
-                                      ,width: 2),
+                                      ,width: 1.5),
                                   borderRadius: BorderRadius.circular(50)
                               ),
             

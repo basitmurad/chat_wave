@@ -11,9 +11,10 @@ class OnBoarding extends StatefulWidget {
 class _OnBoardingState extends State<OnBoarding> {
   @override
   Widget build(BuildContext context) {
-    return   Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
+    return
+
+      Scaffold(
+      body: Container(
           padding: EdgeInsets.only(top: 50),
           decoration: const BoxDecoration(
         
@@ -34,7 +35,7 @@ class _OnBoardingState extends State<OnBoarding> {
             children: [
               const Text(
                 'ChatWave',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, color: Colors.white),
               ),
         
         
@@ -45,7 +46,7 @@ class _OnBoardingState extends State<OnBoarding> {
                 child: const Text(
                   'Connect\nFriends\neasily &\nquickly',
                   style: TextStyle(fontSize: 50, fontWeight: FontWeight.w400, height: 1.1 ,
-                      color: Colors.white70),
+                      color: Colors.white),
                 ),
               ),
         
@@ -56,7 +57,7 @@ class _OnBoardingState extends State<OnBoarding> {
                 child: Text(
                   'Our chat app is the perfect way \nto stayconnected with\nfriends and family.',
                   style: TextStyle(fontSize: 16 ,
-                      color: Colors.white),
+                      color: Colors.white60),
                 ),
               ),
         
@@ -72,17 +73,17 @@ class _OnBoardingState extends State<OnBoarding> {
                       margin: EdgeInsets.only(right: 6),
                       height: 1.0, // Adjust the height of the line
                       width: 140.0,   // Width of the vertical line
-                      color: Colors.black,
+                      color: Colors.white70,
                     ),
                     Text(
                       'OR',
-                      style: TextStyle(fontSize: 18.0),
+                      style: TextStyle(fontSize: 18.0 ,color: Colors.white),
                     ),
                     Container(
                       margin: EdgeInsets.only(left: 6),
                       height: 1.0, // Adjust the height of the line
                       width: 140.0,   // Width of the vertical line
-                      color: Colors.black,
+                      color: Colors.white70,
                     ),
         
                     // Padding(
@@ -96,7 +97,7 @@ class _OnBoardingState extends State<OnBoarding> {
               Container(
                 margin: EdgeInsets.all(20),
         
-                height: 50,
+                height: 45,
                 alignment: Alignment.center,
         
         
@@ -108,97 +109,98 @@ class _OnBoardingState extends State<OnBoarding> {
                 Text('Sign up with email' , style: TextStyle(color: Colors.black , fontSize: 20),),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 30),
+                padding: const EdgeInsets.only(top: 20),
                 child: Row(
-        
+
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-        
-        
+
+
+
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(6.0),
                       child: ClipOval(
-        
+
                         child: Container(
-                            height: 48,
-                            width: 48,
+                            height: 40,
+                            width: 40,
                             decoration: BoxDecoration(
                                 border: Border.all(color: Colors.white
-                                    ,width: 2),
+                                    ,width: 1.5),
                                 borderRadius: BorderRadius.circular(50)
                             ),
-        
+
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Image.asset('assets/images/google.png',
                                 fit: BoxFit.fill,),
                             )
-        
-        
+
+
                         ),
-        
-        
+
+
                       ),
                     ),
-        
+
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(6.0),
                       child: ClipOval(
-        
+
                         child: Container(
-                            height: 50,
-                            width: 50,
+                            height: 40,
+                            width: 40,
                             decoration: BoxDecoration(
                                 border: Border.all(color: Colors.white
-                                    ,width: 2),
+                                    ,width: 1.5),
                                 borderRadius: BorderRadius.circular(50)
                             ),
-        
+
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Image.asset('assets/images/apple.png',
+                              child: Image.asset('assets/images/appleblack.png',
                                 fit: BoxFit.fill,),
                             )
-        
-        
+
+
                         ),
-        
-        
+
+
                       ),
                     ),
-        
+
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(6.0),
                       child: ClipOval(
-        
+
                         child: Container(
-                            height: 50,
-                            width: 50,
+                            height: 40,
+                            width: 40,
                             decoration: BoxDecoration(
                                 border: Border.all(color: Colors.white
-                                    ,width: 2),
+                                    ,width: 1.5),
                                 borderRadius: BorderRadius.circular(50)
                             ),
-        
+
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Image.asset('assets/images/facebook.png',
-        
+
                                 fit: BoxFit.fill,),
                             )
-        
-        
+
+
                         ),
-        
-        
+
+
                       ),
                     ),
-        
+
                   ],
                 ),
-        
-        
+
+
               ),
         
               Row(
@@ -213,7 +215,7 @@ class _OnBoardingState extends State<OnBoarding> {
             ],
           ),
         ),
-      ),
+
 
     );
 
