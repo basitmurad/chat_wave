@@ -1,22 +1,32 @@
-import 'package:chat_wave/screens/onboarding.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:chat_wave/screens/siginScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() async{
+Future<void> main()  async{
+WidgetsFlutterBinding.ensureInitialized();
+try {
+  await Firebase.initializeApp(
+      options: FirebaseOptions(
+          apiKey: "AIzaSyAniQZGhRa-H5W0NXt0DR-gAtQISQ678-E", // paste your api key here
+          appId: "1:402799005924:android:586407ae69bb1f8bc4dcf1", //paste your app id here
+          messagingSenderId: "402799005924", //paste your messagingSenderId here
+          projectId: "wave-50694",
+      ));//paste your project id here
 
-  runApp(const MyApp());
+          } catch (e) {
+  print('Error initializing Firebase: $e');
+}
+
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+   MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      home: const OnBoarding(),
+      home: SignIn(),
     );
   }
 }
-

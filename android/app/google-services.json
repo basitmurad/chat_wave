@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "402799005924",
+    "project_id": "wave-50694",
+    "storage_bucket": "wave-50694.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:402799005924:android:586407ae69bb1f8bc4dcf1",
+        "android_client_info": {
+          "package_name": "com.example.chat_wave"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAniQZGhRa-H5W0NXt0DR-gAtQISQ678-E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
