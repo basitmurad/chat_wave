@@ -45,8 +45,9 @@ class _CompleteProfileState extends State<CompleteProfile> {
   }
 
   void hideProgress() {
-    _progressDialog!.hide();
-  }
+    if (mounted) {
+      _progressDialog?.hide();
+    }  }
 
   void showToast(String message) {
     Fluttertoast.showToast(
@@ -102,13 +103,14 @@ class _CompleteProfileState extends State<CompleteProfile> {
     });
   }
   Future<String?> uploadImageToStorage(File imageFile, String fileName) async {
+
+    showProgress();
     try {
       if (_progressDialog == null) {
         // Ensure _progressDialog is initialized
         _progressDialog = ProgressDialog(context);
       }
 
-      showProgress(); // Use showProgress after ensuring it's not null
 
       FirebaseStorage storage = FirebaseStorage.instance;
       Reference storageReference =
@@ -143,45 +145,6 @@ class _CompleteProfileState extends State<CompleteProfile> {
       return null;
     }
   }
-  // Future<String?> uploadImageToStorage(File imageFile, String fileName) async {
-  //   try {
-  //     FirebaseStorage storage = FirebaseStorage.instance;
-  //     Reference storageReference = storage.ref().child('profile_images').child(widget.userModel.uid!.toString());
-  //
-  //     UploadTask uploadTask = storageReference.putFile(imageFile);
-  //     TaskSnapshot taskSnapshot = await uploadTask.whenComplete(() => null);
-  //
-  //     String downloadUrl = await taskSnapshot.ref.getDownloadURL();
-  //
-  //     String? imageUrl = downloadUrl.toString();
-  //     String? fullName = fullNameController.text.toString();
-  //
-  //     widget.userModel.fullName = fullName;
-  //     widget.userModel.profilePic= imageUrl;
-  //
-  //      await FirebaseFirestore.instance.collection("Users").doc(widget.userModel.uid).set(widget.userModel.toMap()).then((value) {
-  //
-  //
-  //        hideProgress();
-  //        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Dashboard(userModel:widget.userModel, firebaseUser: widget.firebaseUser)));
-  //
-  //        print('Data uploaded to Firestore');
-  //     });
-  //     //   print(downloadUrl);
-  //     //   Logger  li = Logger();
-  //     //   li.d('dounlad url $downloadUrl');
-  //     //
-  //     //
-  //     // return downloadUrl;
-  //
-  //
-  //
-  //   } catch (e) {
-  //     hideProgress();
-  //     print("Error uploading image: $e");
-  //     return null;
-  //   }
-  // }
 
   void checkValues() async {
     String fullname = fullNameController.text.trim();
@@ -194,7 +157,6 @@ class _CompleteProfileState extends State<CompleteProfile> {
       li.d('Uploading data');
 
       // Upload the image to Firebase Storage
-      showProgress();
       String? imageUrl = await uploadImageToStorage(imageFile!, 'example.jpg');
 
       if (imageUrl != null) {
@@ -211,6 +173,10 @@ class _CompleteProfileState extends State<CompleteProfile> {
 
 
 
+  @override
+  void dispose() {
+    super.dispose();
+  }
 
 
 

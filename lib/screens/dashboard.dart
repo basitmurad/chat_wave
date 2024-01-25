@@ -23,29 +23,48 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(title: Text('Chat App'),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(55),
+        child:
+        AppBar(
+          backgroundColor: Color(0xFF4DC681),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(20),
+                  bottomRight: Radius.circular(20))),
+          title: Text('ChatWave' ,style: TextStyle(fontSize: 18,fontWeight: FontWeight.w300,color: Colors.white),
 
-
-
+        ),
+          centerTitle: true,
       ),
+      ),
+
       body: SafeArea(
+
         child: Container(
-          
+          color: Colors.black,
+
           child: Column(
+
 
             children: [
 
 
 
-              FloatingActionButton(onPressed: (){
 
-
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>
-                   SearchScreen(userModel: widget.userModel, firebaseUser: widget.firebaseUser)));
-            } , child: Icon(Icons.next_plan),)],
+            ],
           ),
         ),
       ),
+    floatingActionButton: FloatingActionButton(
+      onPressed: (){
+
+
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>
+            SearchScreen(userModel: widget.userModel, firebaseUser: widget.firebaseUser)));
+      },
+      child: Icon(Icons.navigate_next),
+    ),
     //   floatingActionButton: FloatingActionButton(
     //     onPressed: (){
     //

@@ -9,8 +9,8 @@ class UserModel {
   UserModel.fromMap(Map<String, dynamic> map)
   {
     uid = map["UID"];
-    fullName = map["FullName"];
-    email = map["Email"];
+    fullName = map["FUllNAME"];
+    email = map["EMAIL"];
     profilePic = map["PROFILEPIC"];
   }
 
