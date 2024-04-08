@@ -22,9 +22,18 @@ dependencies:
   fluttertoast: ^8.2.4
   uuid: ^4.3.3
   google_sign_in: ^6.2.1
+  flutter_native_splash: ^2.3.9
 
 
 
+
+flutter_native_splash:
+  android: true
+  ios: true
+  web: false
+
+  color: "#FFFFFF"
+  image: assets/images/icons.png
 
 
 dev_dependencies:
