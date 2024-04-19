@@ -26,6 +26,8 @@ class CircularImageview extends StatelessWidget {
         shape: BoxShape.circle,
         border: Border.all(color: borderColor, width: borderWidth),
       ),
+
+
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ClipOval(
