@@ -1,5 +1,6 @@
 
 import 'package:chat_wave/Screen/SiginInScreeen.dart';
+import 'package:chat_wave/Screen/SignupScreen.dart';
 import 'package:chat_wave/Screen/splashScreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -48,7 +49,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: SignInScreen(),
+      home: SignUpScreen(),
     );
   }
 }

@@ -8,6 +8,7 @@ class SignInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -19,10 +20,9 @@ class SignInScreen extends StatelessWidget {
         ),
       ),
       body: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 15),
+        margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
         child: SingleChildScrollView(
           child: Column(
-          
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
@@ -33,7 +33,8 @@ class SignInScreen extends StatelessWidget {
                     SizedBox(
                       child: Text(
                         "Login into Chatbox",
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                     )
                   ],
@@ -47,7 +48,8 @@ class SignInScreen extends StatelessWidget {
                     SizedBox(
                       child: Text(
                         " Welcome back! Sign in using your social\n       account or email to continue us",
-                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
+                        style: TextStyle(
+                            fontSize: 15, fontWeight: FontWeight.w500),
                       ),
                     )
                   ],
@@ -141,44 +143,71 @@ class SignInScreen extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-          
               const Column(
-          
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
-                    "Your Email" ,
+                    "Email",
                     style: TextStyle(
                         fontWeight: FontWeight.w500, color: Colors.black),
                   ),
-                  SizedBox(height: 6,),
+                  SizedBox(
+                    height: 6,
+                  ),
                   TextField(
                     decoration: InputDecoration(
-                        border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(12)))
-                    ),
+                        border: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(12)))),
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(
+                    height: 10,
+                  ),
                   Text(
-                    "Your Email" ,
+                    "Password",
                     style: TextStyle(
                         fontWeight: FontWeight.w500, color: Colors.black),
                   ),
-                  SizedBox(height: 6,),
+                  SizedBox(
+                    height: 6,
+                  ),
                   TextField(
                     decoration: InputDecoration(
-                        border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(12)))
-                    ),
+                        border: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(12)))),
                   ),
                 ],
               ),
               const SizedBox(
-                height: 15,
+                height: 60,
               ),
-              ElevatedButton(onPressed: (){
+              Container(
+                width: screenWidth * 0.8,
 
-                print("Pressed");
-              }, child: Text("Sign in"))
+
+                child: ElevatedButton(
+                    onPressed: () {
+                      print("Pressed");
+                    },
+                    child: Text("Sign in" ,style: TextStyle(color: Colors.white),) ,
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Color(0xFF24786D))
+                      ,
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16), // Button border radius
+                    ),
+
+                ),),
+              )
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+
+              TextButton(onPressed: (){}, child: Text("Forgot Password?" ,style: TextStyle(color: Color(0xFF24786D)),))
             ],
           ),
         ),
@@ -186,4 +215,3 @@ class SignInScreen extends StatelessWidget {
     );
   }
 }
-
