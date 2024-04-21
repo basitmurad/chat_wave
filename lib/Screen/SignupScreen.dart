@@ -1,11 +1,17 @@
 import 'package:chat_wave/widgets/custumTextField.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+ final TextEditingController name = TextEditingController();
+ final TextEditingController email = TextEditingController();
+ final TextEditingController password = TextEditingController();
+ final TextEditingController number = TextEditingController();
+   SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
@@ -57,10 +63,12 @@ class SignUpScreen extends StatelessWidget {
                 ],
               ),
             ),
-            CustumTextField(text: "Name", fontWeight: FontWeight.bold, textColor: Colors.black),
-            CustumTextField(text: "Name", fontWeight: FontWeight.bold, textColor: Colors.black),
-            CustumTextField(text: "Name", fontWeight: FontWeight.bold, textColor: Colors.black),
-            CustumTextField(text: "Name", fontWeight: FontWeight.bold, textColor: Colors.black),
+            CustumTextField(text: "Name", fontWeight: FontWeight.bold, textColor: Colors.black ,textEditingController: name,),
+            CustumTextField(text: "Email", fontWeight: FontWeight.bold, textColor: Colors.black ,textEditingController: email,),
+            CustumTextField(text: "Password", fontWeight: FontWeight.bold, textColor: Colors.black ,textEditingController: password,),
+            CustumTextField(text: "Number", fontWeight: FontWeight.bold, textColor: Colors.black ,textEditingController: number,),
+
+
 
             SizedBox(height: 10,),
             Container(
@@ -69,6 +77,14 @@ class SignUpScreen extends StatelessWidget {
 
                 child: ElevatedButton(
                   onPressed: () {
+                    if(name.text.isEmpty || email.text.isEmpty
+                        || password.text.isEmpty  || number.text.isEmpty)
+                      {
+                        Fluttertoast.showToast(msg: "Fill all the fields");
+                      }
+
+                    FocusScope.of(context).unfocus();
+
                     print("Pressed");
                   },
                   child: Text("Create Account" ,style: TextStyle(color: Colors.white),) ,

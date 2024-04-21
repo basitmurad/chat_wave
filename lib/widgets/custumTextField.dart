@@ -7,11 +7,14 @@ class CustumTextField extends StatelessWidget {
     required this.text,
     required this.fontWeight,
     required this.textColor,
+
+    required this.textEditingController,
   });
 
   final String text;
   final FontWeight fontWeight;
   final Color textColor;
+  final TextEditingController textEditingController;
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +34,7 @@ class CustumTextField extends StatelessWidget {
           ),
           SizedBox(height: 6,),
           TextField(
+            controller: textEditingController,
             decoration: InputDecoration(
                 border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(12)))
             ),

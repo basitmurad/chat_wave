@@ -1,4 +1,5 @@
 
+import 'package:chat_wave/Screen/dashboard/DashboardScreen.dart';
 import 'package:chat_wave/Screen/SiginInScreeen.dart';
 import 'package:chat_wave/Screen/SignupScreen.dart';
 import 'package:chat_wave/Screen/splashScreen.dart';
@@ -49,7 +50,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: SignUpScreen(),
+      home: DashboardScreen(),
     );
   }
 }
